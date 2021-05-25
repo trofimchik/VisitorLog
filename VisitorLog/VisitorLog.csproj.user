@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\AdminPanelControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EntryControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ExitControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EnterExitSelectionControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SecurityOfficerWorkingPanelControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SecurityOfficerLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Subcontrols\CurrentVisitorControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Subcontrols\RemainingVisitorsControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Subcontrols\VisitorLogForThePeriod.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\AdminPanelControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EntryControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ExitControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EnterExitSelectionControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SecurityOfficerWorkingPanelControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SecurityOfficerLoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Subcontrols\CurrentVisitorControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Subcontrols\RemainingVisitorsControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Subcontrols\VisitorLogForThePeriod.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

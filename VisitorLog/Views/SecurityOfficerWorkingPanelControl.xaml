@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="VisitorLog.Views.SecurityOfficerWorkingPanelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VisitorLog"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="AliceBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="1" Grid.Column="1">
+            <ListBoxItem>текущие посетители</ListBoxItem>
+            <ListBoxItem>оставшиеся посетители за период</ListBoxItem>
+            <ListBoxItem>журнал посещений за период</ListBoxItem>
+            <ListBoxItem>создание резервной копии</ListBoxItem>
+        </ListBox>
+        <TextBlock Grid.Row="1" Grid.Column="2">тута смена контролов, в зависимости от выбранного пункта меню</TextBlock>
+    </Grid>
+</UserControl>

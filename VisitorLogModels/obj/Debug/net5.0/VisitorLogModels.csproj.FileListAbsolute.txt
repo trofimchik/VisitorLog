@@ -1,0 +1,12 @@
+C:\repos\VisitorLog\VisitorLogModels\bin\Debug\net5.0\VisitorLogModels.deps.json
+C:\repos\VisitorLog\VisitorLogModels\bin\Debug\net5.0\VisitorLogModels.dll
+C:\repos\VisitorLog\VisitorLogModels\bin\Debug\net5.0\ref\VisitorLogModels.dll
+C:\repos\VisitorLog\VisitorLogModels\bin\Debug\net5.0\VisitorLogModels.pdb
+C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.AssemblyInfoInputs.cache
+C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.AssemblyInfo.cs
+C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.csproj.CoreCompileInputs.cache
+C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.dll
+C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\ref\VisitorLogModels.dll
+C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.pdb
+C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.csprojAssemblyReference.cache

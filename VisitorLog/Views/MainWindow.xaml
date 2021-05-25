@@ -1,0 +1,63 @@
+﻿<Window x:Class="VisitorLog.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VisitorLog"
+        xmlns:vm="clr-namespace:VisitorLog.ViewModels"
+        xmlns:view="clr-namespace:VisitorLog.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="800" Height="400">
+    <!--WindowStyle="None"-->
+    <!--WindowState="Maximized"-->
+    <Window.Resources>
+
+        <vm:EnterExitSelectionViewModel x:Key="InputOutputVM"/>
+        <vm:SecurityOfficerLoginViewModel x:Key="SecurityOfficerLoginVM"/>
+        <vm:AdminPanelViewModel x:Key="AdminPanelVM"/>
+        
+        <DataTemplate DataType="{x:Type vm:EnterExitSelectionViewModel}">
+            <view:EnterExitSelectionControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EntryViewModel}">
+            <view:EntryControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ExitViewModel}">
+            <view:ExitControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SecurityOfficerLoginViewModel}">
+            <view:SecurityOfficerLoginControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SecurityOfficerWorkingPanelViewModel}">
+            <view:SecurityOfficerWorkingPanelControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AdminPanelViewModel}">
+            <view:AdminPanelControl/>
+        </DataTemplate>
+        
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:CurrentContentVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ContentPresenter Grid.Row="1" Grid.Column="1" Content="{Binding CurrentContent}"/>
+        <Button Grid.Column="0" Grid.Row="2" Command="{Binding ChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource InputOutputVM}}">ИКОНКА "ДОМОЙ"
+        </Button>
+        <Button Grid.Column="2" Grid.Row="2" Command="{Binding ChangeVMCommand}" 
+                CommandParameter="{Binding Source={StaticResource SecurityOfficerLoginVM}}">сб
+        </Button>
+        <Button Grid.Column="2" Grid.Row="0" Command="{Binding ChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource AdminPanelVM}}">админ</Button>
+    </Grid>
+</Window>

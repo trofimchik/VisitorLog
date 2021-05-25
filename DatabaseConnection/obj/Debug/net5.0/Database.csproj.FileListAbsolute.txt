@@ -1,0 +1,12 @@
+C:\repos\VisitorLog\DatabaseConnection\bin\Debug\net5.0\Database.deps.json
+C:\repos\VisitorLog\DatabaseConnection\bin\Debug\net5.0\Database.dll
+C:\repos\VisitorLog\DatabaseConnection\bin\Debug\net5.0\ref\Database.dll
+C:\repos\VisitorLog\DatabaseConnection\bin\Debug\net5.0\Database.pdb
+C:\repos\VisitorLog\DatabaseConnection\obj\Debug\net5.0\Database.csprojAssemblyReference.cache
+C:\repos\VisitorLog\DatabaseConnection\obj\Debug\net5.0\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\VisitorLog\DatabaseConnection\obj\Debug\net5.0\Database.AssemblyInfoInputs.cache
+C:\repos\VisitorLog\DatabaseConnection\obj\Debug\net5.0\Database.AssemblyInfo.cs
+C:\repos\VisitorLog\DatabaseConnection\obj\Debug\net5.0\Database.csproj.CoreCompileInputs.cache
+C:\repos\VisitorLog\DatabaseConnection\obj\Debug\net5.0\Database.dll
+C:\repos\VisitorLog\DatabaseConnection\obj\Debug\net5.0\ref\Database.dll
+C:\repos\VisitorLog\DatabaseConnection\obj\Debug\net5.0\Database.pdb
