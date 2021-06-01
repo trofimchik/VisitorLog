@@ -40,11 +40,32 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center">фиксация входа(посетитель? или сопровождающее лицо?)</TextBlock>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Surname, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
                  Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1">имя</TextBox>
-        <TextBox Grid.Row="5" Grid.Column="1">отчество</TextBox>
-        <ComboBox Grid.Row="1" Grid.Column="3">цели визита</ComboBox>
-        <!--<ListBox Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">тут цели визита(мб комбо лучше)</ListBox>-->
-        <ListBox Grid.Row="4" Grid.Column="3" Grid.RowSpan="2">тут сопровождающие лица(мб комбо лучше)</ListBox>
-        <Button Grid.Row="6" Grid.Column="3" Command="{Binding ChangeVMCommand}" CommandParameter="{Binding Source={StaticResource ResourceKey=InputOutputSelectionVM}}">сохранить</Button>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Name, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+                 Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Patronymic, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+                 Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding DocumentNumber, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+                 Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
+        <ComboBox Grid.Row="3" Grid.Column="3" ItemsSource="{Binding PurposesOfVisit}" SelectedItem="{Binding SelectedPurpose}"></ComboBox>
+        <ComboBox Grid.Row="4" Grid.Column="3" ItemsSource="{Binding Organizations}" SelectedItem="{Binding SelectedOrganization}"></ComboBox>
+        <ComboBox Grid.Row="5" Grid.Column="3" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1} {2}">
+                                <Binding Path="Surname"/>
+                                <Binding Path="Name"/>
+                                <Binding Path="Patronymic"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Grid.Row="6" Grid.Column="3" Command="{Binding SaveAndChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource ResourceKey=InputOutputSelectionVM}}">
+            сохранить
+        </Button>
     </Grid>
 </UserControl>
