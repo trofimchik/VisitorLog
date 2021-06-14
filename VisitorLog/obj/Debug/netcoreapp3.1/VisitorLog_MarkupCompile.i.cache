@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\repos\VisitorLog\VisitorLog\App.xaml
-10-1164410550
+8-1915393614
 
-331872614443
-213-1637317522
-Views\AdminPanelControl.xaml;Views\EnterExitSelectionControl.xaml;Views\EntryControl.xaml;Views\ExitControl.xaml;Views\MainWindow.xaml;Views\SecurityOfficerLoginControl.xaml;Views\SecurityOfficerWorkingPanelControl.xaml;Views\Subcontrols\CurrentVisitorControl.xaml;Views\Subcontrols\RemainingVisitorsControl.xaml;Views\Subcontrols\VisitorLogForThePeriod.xaml;
+341121882724
+2171039258310
+Views\AdminLoginPanelControl.xaml;Views\AdminPanelControl.xaml;Views\EnterExitSelectionControl.xaml;Views\EntryControl.xaml;Views\ExitControl.xaml;Views\MainWindow.xaml;Views\SecurityOfficerLoginControl.xaml;Views\SecurityOfficerWorkingPanelControl.xaml;
 
 True
 

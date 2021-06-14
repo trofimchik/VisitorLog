@@ -71,6 +71,7 @@ namespace VisitorLog.ViewModels
             }
         }
 
+        [Required(ErrorMessage = "Поле не должно быть пустым.")]
         [StringLength(50, ErrorMessage = "Не больше 20 символов.")]
         public string DocumentNumber
         {
@@ -177,6 +178,13 @@ namespace VisitorLog.ViewModels
         }
         private bool SaveAndChangeVM_CanExecute()
         {
+            bool visitExists;
+            using (VisitorLogContext db = new VisitorLogContext())
+            {
+                visitExists = db.Visits.Any(x => x.DocumentNumber == DocumentNumber);
+            }
+            if (visitExists)
+                return false;
             if (SelectedEmployee != null && Surname != null && Name != null)
                 if (Name.Length > 0 && Surname.Length > 0)
                     return true;

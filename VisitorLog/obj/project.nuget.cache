@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kOMiWgj95+tOYgyLcCXA8cYsoI8QWPa/ummRltAzRzYG7/QhFdYacDsyFPKn2o1mrrWUQQQoDtv8lgjZc95eHw==",
+  "dgSpecHash": "05mG1fCzprw26um4GA2qNK3CpI7yFaCejFIFoxPD182THXHPTPqCw+DhqIbQHKJZp15XPkHTwhlnRZbj/klCGg==",
   "success": true,
   "projectFilePath": "C:\\repos\\VisitorLog\\VisitorLog\\VisitorLog.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,10 @@
     "C:\\Users\\trofk\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\trofk\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\trofk\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\trofk\\.nuget\\packages\\syncfusion.data.wpf\\19.1.0.66\\syncfusion.data.wpf.19.1.0.66.nupkg.sha512",
+    "C:\\Users\\trofk\\.nuget\\packages\\syncfusion.licensing\\19.1.0.66\\syncfusion.licensing.19.1.0.66.nupkg.sha512",
+    "C:\\Users\\trofk\\.nuget\\packages\\syncfusion.sfgrid.wpf\\19.1.0.66\\syncfusion.sfgrid.wpf.19.1.0.66.nupkg.sha512",
+    "C:\\Users\\trofk\\.nuget\\packages\\syncfusion.shared.wpf\\19.1.0.66\\syncfusion.shared.wpf.19.1.0.66.nupkg.sha512",
     "C:\\Users\\trofk\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\trofk\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\trofk\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

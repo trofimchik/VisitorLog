@@ -15,7 +15,7 @@ namespace VisitorLog.ViewModels
 
         public CurrentContentVM()
         {
-            CurrentContent = new EnterExitSelectionViewModel();
+            CurrentContent = new SecurityOfficerLoginViewModel();
 
             ContentChanger.ContentChanged += ChangeVM;
 
@@ -33,6 +33,7 @@ namespace VisitorLog.ViewModels
                 OnPropertyChanged("CurrentContent");
             }
         }
+
 
         public ICommand ChangeVMCommand { get; private set; }
 

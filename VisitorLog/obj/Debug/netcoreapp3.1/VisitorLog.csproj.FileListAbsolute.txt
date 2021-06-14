@@ -4,9 +4,6 @@ C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\ExitControl.g.cs
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\MainWindow.g.cs
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\SecurityOfficerLoginControl.g.cs
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\SecurityOfficerWorkingPanelControl.g.cs
-C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\Subcontrols\CurrentVisitorControl.g.cs
-C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\Subcontrols\RemainingVisitorsControl.g.cs
-C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\Subcontrols\VisitorLogForThePeriod.g.cs
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\App.g.cs
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\VisitorLog_MarkupCompile.cache
@@ -62,9 +59,6 @@ C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\ExitControl.baml
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\MainWindow.baml
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\SecurityOfficerLoginControl.baml
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\SecurityOfficerWorkingPanelControl.baml
-C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\Subcontrols\CurrentVisitorControl.baml
-C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\Subcontrols\RemainingVisitorsControl.baml
-C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\Subcontrols\VisitorLogForThePeriod.baml
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\VisitorLog.g.resources
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\VisitorLog.AssemblyInfoInputs.cache
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\VisitorLog.AssemblyInfo.cs
@@ -75,4 +69,10 @@ C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\VisitorLog.pdb
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\VisitorLog.genruntimeconfig.cache
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\EnterExitSelectionControl.g.cs
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\EnterExitSelectionControl.baml
+C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\AdminLoginPanelControl.g.cs
+C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\Views\AdminLoginPanelControl.baml
 C:\repos\VisitorLog\VisitorLog\obj\Debug\netcoreapp3.1\VisitorLog.csprojAssemblyReference.cache
+C:\repos\VisitorLog\VisitorLog\bin\Debug\netcoreapp3.1\Syncfusion.Data.WPF.dll
+C:\repos\VisitorLog\VisitorLog\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\repos\VisitorLog\VisitorLog\bin\Debug\netcoreapp3.1\Syncfusion.SfGrid.WPF.dll
+C:\repos\VisitorLog\VisitorLog\bin\Debug\netcoreapp3.1\Syncfusion.Shared.WPF.dll

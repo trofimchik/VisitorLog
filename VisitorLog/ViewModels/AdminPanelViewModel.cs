@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VisitorLog.ViewModels
 {
-    class AdminPanelViewModel
+    class AdminPanelViewModel : BaseViewModel
     {
     }
 }

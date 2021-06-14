@@ -26,8 +26,22 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center">фиксация выхода(сопровождающее лицо)</TextBlock>
-        <ListBox Grid.Row="1" Grid.Column="1">ВЫЮРАТЬ ИЗ список посетителей</ListBox>
-        <TextBox Grid.Row="1" Grid.Column="3">примечание</TextBox>
+        <ListBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Visitors}" SelectedItem="{Binding SelectedVisitor}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1} {2}">
+                                <Binding Path="Surname"/>
+                                <Binding Path="Name"/>
+                                <Binding Path="Patronymic"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Note}"></TextBox>
         <Button Grid.Row="3" Grid.Column="3" Command="{Binding ChangeVMCommand}" CommandParameter="{StaticResource ResourceKey=InputOutputVM}">сохранитьПОДТВЕРДИТЬ ДЕЙСТВИЕ</Button>
     </Grid>
 </UserControl>

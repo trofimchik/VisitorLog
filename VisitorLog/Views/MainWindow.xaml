@@ -14,7 +14,7 @@
 
         <vm:EnterExitSelectionViewModel x:Key="InputOutputVM"/>
         <vm:SecurityOfficerLoginViewModel x:Key="SecurityOfficerLoginVM"/>
-        <vm:AdminPanelViewModel x:Key="AdminPanelVM"/>
+        <vm:AdminLoginPanelViewModel x:Key="AdminLoginPanelVM"/>
         
         <DataTemplate DataType="{x:Type vm:EnterExitSelectionViewModel}">
             <view:EnterExitSelectionControl/>
@@ -30,6 +30,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:SecurityOfficerWorkingPanelViewModel}">
             <view:SecurityOfficerWorkingPanelControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AdminLoginPanelViewModel}">
+            <view:AdminLoginPanelControl/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:AdminPanelViewModel}">
             <view:AdminPanelControl/>
@@ -50,14 +53,13 @@
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
+        
         <ContentPresenter Grid.Row="1" Grid.Column="1" Content="{Binding CurrentContent}"/>
-        <Button Grid.Column="0" Grid.Row="2" Command="{Binding ChangeVMCommand}"
-                CommandParameter="{Binding Source={StaticResource InputOutputVM}}">ИКОНКА "ДОМОЙ"
-        </Button>
+        
         <Button Grid.Column="2" Grid.Row="2" Command="{Binding ChangeVMCommand}" 
-                CommandParameter="{Binding Source={StaticResource SecurityOfficerLoginVM}}">сб
+                CommandParameter="{Binding Source={StaticResource SecurityOfficerLoginVM}}">ИКОНКА "ДОМОЙ"
         </Button>
-        <Button Grid.Column="2" Grid.Row="0" Command="{Binding ChangeVMCommand}"
-                CommandParameter="{Binding Source={StaticResource AdminPanelVM}}">админ</Button>
+        <Button Grid.Column="0" Grid.Row="2" Command="{Binding ChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource AdminLoginPanelVM}}">админ</Button>
     </Grid>
 </Window>

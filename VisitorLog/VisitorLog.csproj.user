@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AdminLoginPanelControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AdminPanelControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,17 +28,11 @@
     <Compile Update="Views\SecurityOfficerLoginControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Subcontrols\CurrentVisitorControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Subcontrols\RemainingVisitorsControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Subcontrols\VisitorLogForThePeriod.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AdminLoginPanelControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AdminPanelControl.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -55,15 +52,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SecurityOfficerLoginControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Subcontrols\CurrentVisitorControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Subcontrols\RemainingVisitorsControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Subcontrols\VisitorLogForThePeriod.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

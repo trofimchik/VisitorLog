@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace VisitorLog.Views.Subcontrols
+namespace VisitorLog.Views
 {
     /// <summary>
-    /// Логика взаимодействия для VisitorLogForThePeriod.xaml
+    /// Логика взаимодействия для AdminLoginPanelControl.xaml
     /// </summary>
-    public partial class VisitorLogForThePeriod : UserControl
+    public partial class AdminLoginPanelControl : UserControl
     {
-        public VisitorLogForThePeriod()
+        public AdminLoginPanelControl()
         {
             InitializeComponent();
         }

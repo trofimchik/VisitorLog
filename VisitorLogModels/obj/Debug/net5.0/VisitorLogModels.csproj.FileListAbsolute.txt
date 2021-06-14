@@ -9,4 +9,3 @@ C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.csproj.Co
 C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.dll
 C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\ref\VisitorLogModels.dll
 C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.pdb
-C:\repos\VisitorLog\VisitorLogModels\obj\Debug\net5.0\VisitorLogModels.csprojAssemblyReference.cache
