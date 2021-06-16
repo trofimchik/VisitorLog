@@ -6,7 +6,7 @@
              xmlns:syncfusion="sf"
              xmlns:local="clr-namespace:VisitorLog"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="AliceBlue">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         
     </UserControl.Resources>
@@ -20,8 +20,7 @@
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">тута смена контролов, в зависимости от выбранного пункта меню</TextBlock>
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">Создание резервной копии.</Button>
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></TextBlock>
         <TabControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <TabItem Header="Текущие посетители">
                 <Syncfusion:SfDataGrid x:Name="sfGrid"  ItemsSource="{Binding CurrentVisits}" AllowFiltering="True" ColumnSizer="Auto" AutoGenerateColumns="False">
@@ -43,7 +42,7 @@ Command="{Binding Path=DataContext.ExitCommand,ElementName=sfGrid}" CommandParam
                         <Syncfusion:GridTextColumn HeaderText="Цель визита" MappingName="Purpose" />
                         <Syncfusion:GridTextColumn HeaderText="Время входа" MappingName="DateTimeOfEntry" />
                         <Syncfusion:GridTextColumn HeaderText="Примечание" MappingName="Note" />
-                        
+
                     </Syncfusion:SfDataGrid.Columns>
                 </Syncfusion:SfDataGrid>
                 <!--<Grid Background="#FFE5E5E5"/>-->
@@ -83,5 +82,7 @@ Command="{Binding Path=DataContext.ExitCommand,ElementName=sf2Grid}" CommandPara
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button Grid.Row="2" Grid.Column="0">Назад</Button>
+        <Button Grid.Row="2" Grid.Column="2" Content="Создание резервной копии."></Button>
     </Grid>
 </UserControl>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:VisitorLog"
              xmlns:vm="clr-namespace:VisitorLog.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="AliceBlue">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <vm:EnterExitSelectionViewModel x:Key="InputOutputVM"></vm:EnterExitSelectionViewModel>
     </UserControl.Resources>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:VisitorLog.Views"
              mc:Ignorable="d" 
              xmlns:vm="clr-namespace:VisitorLog.ViewModels"
-             d:DesignHeight="450" d:DesignWidth="800"  Background="AliceBlue">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <vm:EntryViewModel x:Key="EntryVM"/>
         <vm:SecurityOfficerWorkingPanelViewModel x:Key="ExitVM"/>
@@ -26,5 +26,8 @@
         </Grid.RowDefinitions>
         <Button Grid.Row="1" Grid.Column="1" Command="{Binding ChangeVMCommand}" CommandParameter="{Binding Source={StaticResource ResourceKey=EntryVM}}">Фиксация входа</Button>
         <Button Grid.Row="1" Grid.Column="3" Command="{Binding ChangeVMCommand}" CommandParameter="{Binding Source={StaticResource ResourceKey=ExitVM}}">Фиксация выхода</Button>
+
+        <Button Grid.Row="2" Grid.Column="0" Content="Выход" Command="{Binding MainCloseButtonCommand}"
+CommandParameter="{Binding ElementName=mainWindow}"></Button>
     </Grid>
 </UserControl>

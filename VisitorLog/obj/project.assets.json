@@ -1,7 +1,37 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net5.0-windows7.0": {
+      "AdonisUI.ClassicTheme.NET5/1.17.1": {
+        "type": "package",
+        "dependencies": {
+          "AdonisUI.NET5": "1.17.1"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/AdonisUI.ClassicTheme.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/AdonisUI.ClassicTheme.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "AdonisUI.NET5/1.17.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "5.0.2"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/AdonisUI.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/AdonisUI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -226,10 +256,10 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll": {}
+          "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll": {}
+          "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
@@ -247,8 +277,7 @@
           "Microsoft.Extensions.DependencyInjection": "5.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
-          "Microsoft.Extensions.Options": "5.0.0",
-          "System.Diagnostics.DiagnosticSource": "5.0.0"
+          "Microsoft.Extensions.Options": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.Extensions.Logging.dll": {}
@@ -273,10 +302,10 @@
           "Microsoft.Extensions.Primitives": "5.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {}
+          "lib/net5.0/Microsoft.Extensions.Options.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {}
+          "lib/net5.0/Microsoft.Extensions.Options.dll": {}
         }
       },
       "Microsoft.Extensions.Primitives/5.0.0": {
@@ -371,7 +400,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.NETCore.Platforms/3.1.0": {
+      "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -412,10 +441,10 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/4.7.0": {
+      "Microsoft.Win32.SystemEvents/5.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0"
+          "Microsoft.NETCore.Platforms": "5.0.0"
         },
         "compile": {
           "ref/netstandard2.0/_._": {}
@@ -483,19 +512,19 @@
       "Syncfusion.Data.WPF/19.1.0.66": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/Syncfusion.Data.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.Data.WPF.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/Syncfusion.Data.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.Data.WPF.dll": {}
         }
       },
       "Syncfusion.Licensing/19.1.0.66": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/Syncfusion.Licensing.dll": {}
+          "lib/net5.0/Syncfusion.Licensing.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/Syncfusion.Licensing.dll": {}
+          "lib/net5.0/Syncfusion.Licensing.dll": {}
         }
       },
       "Syncfusion.SfGrid.WPF/19.1.0.66": {
@@ -506,10 +535,10 @@
           "Syncfusion.Shared.WPF": "19.1.0.66"
         },
         "compile": {
-          "lib/netcoreapp3.1/Syncfusion.SfGrid.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.SfGrid.WPF.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/Syncfusion.SfGrid.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.SfGrid.WPF.dll": {}
         }
       },
       "Syncfusion.Shared.WPF/19.1.0.66": {
@@ -518,10 +547,10 @@
           "Syncfusion.Licensing": "19.1.0.66"
         },
         "compile": {
-          "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.Shared.WPF.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.Shared.WPF.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -688,10 +717,10 @@
       "System.Diagnostics.DiagnosticSource/5.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
       "System.Diagnostics.Tools/4.3.0": {
@@ -716,17 +745,16 @@
           "ref/netstandard1.5/_._": {}
         }
       },
-      "System.Drawing.Common/4.7.0": {
+      "System.Drawing.Common/5.0.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.Win32.SystemEvents": "4.7.0"
+          "Microsoft.Win32.SystemEvents": "5.0.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+          "lib/netcoreapp3.0/System.Drawing.Common.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
@@ -1568,6 +1596,34 @@
     }
   },
   "libraries": {
+    "AdonisUI.ClassicTheme.NET5/1.17.1": {
+      "sha512": "z3ZeE1VX82vLkNmWdx7c0xmqFu9z1ol9GhLnWjvpYp7+JmFjDAcFvh9Zqr2mmVqWpgSNl+syZJTOlPHEF3p3qw==",
+      "type": "package",
+      "path": "adonisui.classictheme.net5/1.17.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "adonisui.classictheme.net5.1.17.1.nupkg.sha512",
+        "adonisui.classictheme.net5.nuspec",
+        "favicon-256x256.png",
+        "lib/net5.0-windows7.0/AdonisUI.ClassicTheme.dll",
+        "lib/net5.0-windows7.0/AdonisUI.ClassicTheme.xml"
+      ]
+    },
+    "AdonisUI.NET5/1.17.1": {
+      "sha512": "m37ieB82f0jOiBBuNnTnfdJZXoCGOSQUu9LPXae/QUC+qlaZ5I5UqAqFcqG728XYAPCrkPfg1KiJhS0/F7yDkg==",
+      "type": "package",
+      "path": "adonisui.net5/1.17.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "adonisui.net5.1.17.1.nupkg.sha512",
+        "adonisui.net5.nuspec",
+        "favicon-256x256.png",
+        "lib/net5.0-windows7.0/AdonisUI.dll",
+        "lib/net5.0-windows7.0/AdonisUI.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -2178,17 +2234,18 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.NETCore.Platforms/3.1.0": {
-      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/3.1.0",
+      "path": "microsoft.netcore.platforms/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.5.0.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -2257,25 +2314,24 @@
         "version.txt"
       ]
     },
-    "Microsoft.Win32.SystemEvents/4.7.0": {
-      "sha512": "mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
+    "Microsoft.Win32.SystemEvents/5.0.0": {
+      "sha512": "Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/4.7.0",
+      "path": "microsoft.win32.systemevents/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/Microsoft.Win32.SystemEvents.dll",
         "lib/net461/Microsoft.Win32.SystemEvents.xml",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+        "microsoft.win32.systemevents.5.0.0.nupkg.sha512",
         "microsoft.win32.systemevents.nuspec",
         "ref/net461/Microsoft.Win32.SystemEvents.dll",
         "ref/net461/Microsoft.Win32.SystemEvents.xml",
-        "ref/net472/Microsoft.Win32.SystemEvents.dll",
-        "ref/net472/Microsoft.Win32.SystemEvents.xml",
         "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
         "ref/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
         "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
@@ -3219,18 +3275,21 @@
         "system.diagnostics.tracing.nuspec"
       ]
     },
-    "System.Drawing.Common/4.7.0": {
-      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+    "System.Drawing.Common/5.0.2": {
+      "sha512": "rvr/M1WPf24ljpvvrVd74+NdjRUJu1bBkspkZcnzSZnmAUQWSvanlQ0k/hVHk+cHufZbZfu7vOh/vYc0q5Uu/A==",
       "type": "package",
-      "path": "system.drawing.common/4.7.0",
+      "path": "system.drawing.common/5.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net461/System.Drawing.Common.dll",
+        "lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "lib/netcoreapp3.0/System.Drawing.Common.xml",
         "lib/netstandard2.0/System.Drawing.Common.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
@@ -3252,7 +3311,7 @@
         "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
         "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
         "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
-        "system.drawing.common.4.7.0.nupkg.sha512",
+        "system.drawing.common.5.0.2.nupkg.sha512",
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -5980,7 +6039,9 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net5.0-windows7.0": [
+      "AdonisUI.ClassicTheme.NET5 >= 1.17.1",
+      "AdonisUI.NET5 >= 1.17.1",
       "Microsoft.EntityFrameworkCore >= 5.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.5",
@@ -6012,15 +6073,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
           "projectReferences": {}
         }
       },
@@ -6031,9 +6092,17 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
         "dependencies": {
+          "AdonisUI.ClassicTheme.NET5": {
+            "target": "Package",
+            "version": "[1.17.1, )"
+          },
+          "AdonisUI.NET5": {
+            "target": "Package",
+            "version": "[1.17.1, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.5, )"

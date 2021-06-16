@@ -78,7 +78,18 @@ namespace VisitorLog.ViewModels
             get { return documentNumber; }
             set
             {
-                documentNumber = value;
+                bool visitExists;
+
+                using (VisitorLogContext db = new VisitorLogContext())
+                    visitExists = db.Visits.Any(x => x.DocumentNumber == value && x.DatetimeOfEntry.Date == DateTime.Now.Date);
+                
+                if (visitExists)
+                {
+                    documentNumber = null;
+                    MessageBox.Show("В списке присутствующих на территории уже есть человек с такими-же паспортными данными.");
+                }
+                else documentNumber = value;
+
                 ValidateProperty(value);
                 OnPropertyChanged();
             }
@@ -181,7 +192,7 @@ namespace VisitorLog.ViewModels
             bool visitExists;
             using (VisitorLogContext db = new VisitorLogContext())
             {
-                visitExists = db.Visits.Any(x => x.DocumentNumber == DocumentNumber);
+                visitExists = db.Visits.Any(x => x.DocumentNumber == DocumentNumber && x.DatetimeOfEntry.Date == DateTime.Now.Date);
             }
             if (visitExists)
                 return false;

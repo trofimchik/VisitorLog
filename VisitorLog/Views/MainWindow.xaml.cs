@@ -23,6 +23,14 @@ namespace VisitorLog.Views
         public MainWindow()
         {
             InitializeComponent();
+            this.KeyDown += Window1_KeyDown;
+        }
+        void Window1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.System && e.SystemKey == Key.F4)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
