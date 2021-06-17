@@ -1,14 +1,27 @@
-﻿<UserControl xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="VisitorLog.Views.SecurityOfficerWorkingPanelControl"
+﻿<UserControl x:Class="VisitorLog.Views.SecurityOfficerWorkingPanelControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:VisitorLog.ViewModels"
+             xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
              xmlns:syncfusion="sf"
              xmlns:local="clr-namespace:VisitorLog"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetProperty="Opacity"
+              From="0.0" To="1.0" Duration="0:0:1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
     <UserControl.Resources>
-        
+        <vm:EnterExitSelectionViewModel x:Key="EnterExitSelectionVM"/>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -41,7 +54,7 @@ Command="{Binding Path=DataContext.ExitCommand,ElementName=sfGrid}" CommandParam
                         <Syncfusion:GridTextColumn HeaderText="Организация" MappingName="OrgName" />
                         <Syncfusion:GridTextColumn HeaderText="Цель визита" MappingName="Purpose" />
                         <Syncfusion:GridTextColumn HeaderText="Время входа" MappingName="DateTimeOfEntry" />
-                        <Syncfusion:GridTextColumn HeaderText="Примечание" MappingName="Note" />
+                        <Syncfusion:GridTextColumn HeaderText="Примечание" MappingName="Note" AllowEditing="True"/>
 
                     </Syncfusion:SfDataGrid.Columns>
                 </Syncfusion:SfDataGrid>
@@ -50,14 +63,14 @@ Command="{Binding Path=DataContext.ExitCommand,ElementName=sfGrid}" CommandParam
             <TabItem Header="Журнал всех посещений">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="55"></RowDefinition>
+                        <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal" >
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" >
                         <DatePicker Text="Начало периода" DisplayDateStart="01/01/2020" DisplayDateEnd="{Binding EndingOfPeriodRemaining}" SelectedDate="{Binding BeginningOfPeriodRemaining}"></DatePicker>
-                        <DatePicker Text="Конец периода" DisplayDateStart="{Binding BeginningOfPeriodRemaining}" DisplayDateEnd="01/01/2030" SelectedDate="{Binding EndingOfPeriodRemaining}"></DatePicker>
+                        <DatePicker Text="Конец периода" DisplayDateStart="{Binding BeginningOfPeriodRemaining}" DisplayDateEnd="{Binding EndDate}" SelectedDate="{Binding EndingOfPeriodRemaining}"></DatePicker>
                     </StackPanel>
-                    <Syncfusion:SfDataGrid x:Name="sfGrid2" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding RemainingVisits}" AllowFiltering="True" ColumnSizer="Auto" AutoGenerateColumns="False">
+                    <Syncfusion:SfDataGrid x:Name="sfGrid2" Grid.Row="1" ItemsSource="{Binding RemainingVisits}" AllowFiltering="True" ColumnSizer="Auto" AutoGenerateColumns="False">
                         <Syncfusion:SfDataGrid.Columns>
                             <Syncfusion:GridTemplateColumn Width="52" MappingName="Выход" AllowFiltering="False" >
                                 <Syncfusion:GridTemplateColumn.CellTemplate>
@@ -71,18 +84,17 @@ Command="{Binding Path=DataContext.ExitCommand,ElementName=sf2Grid}" CommandPara
                             <Syncfusion:GridTextColumn HeaderText="Имя" MappingName="Name" />
                             <Syncfusion:GridTextColumn HeaderText="Отчество" MappingName="Patronymic" />
                             <Syncfusion:GridTextColumn HeaderText="Номер документа" MappingName="DocumentNumber" />
-                            <!--<Syncfusion:GridTextColumn HeaderText="Сопровождающий" MappingName="IdEmployees" />-->
                             <Syncfusion:GridTextColumn HeaderText="Организация" MappingName="OrgName" />
                             <Syncfusion:GridTextColumn HeaderText="Цель визита" MappingName="Purpose" />
                             <Syncfusion:GridTextColumn HeaderText="Время входа" MappingName="DateTimeOfEntry" />
                             <Syncfusion:GridTextColumn HeaderText="Примечание" MappingName="Note" />
-
                         </Syncfusion:SfDataGrid.Columns>
                     </Syncfusion:SfDataGrid>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Grid.Row="2" Grid.Column="0">Назад</Button>
+        <Button Grid.Row="2" Grid.Column="0" Command="{Binding ChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource ResourceKey=EnterExitSelectionVM}}" Content="Назад"/>
         <Button Grid.Row="2" Grid.Column="2" Content="Создание резервной копии."></Button>
     </Grid>
 </UserControl>

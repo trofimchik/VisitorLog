@@ -27,7 +27,9 @@ namespace VisitorLog.ViewModels
         RaiseContentChangerCommand changer = new RaiseContentChangerCommand();
         public EntryViewModel()
         {
+            ChangeVMCommand = new RelayCommand(changer.ExecuteEventRaising);
             SaveAndChangeVMCommand = new RelayCommand(SaveAndChangeVM, SaveAndChangeVM_CanExecute);
+
             using (VisitorLogContext db = new VisitorLogContext())
             {
                 PurposesOfVisit = (from purpose in db.PurposesOfVisits select purpose.Name).ToList();
@@ -47,6 +49,7 @@ namespace VisitorLog.ViewModels
                 OnPropertyChanged();
             }
         }
+
         [Required(ErrorMessage = "Поле не должно быть пустым.")]
         [StringLength(100, ErrorMessage = "Не больше 100 символов.")]
         public string Name
@@ -187,6 +190,7 @@ namespace VisitorLog.ViewModels
                 db.SaveChanges();
             }
         }
+
         private bool SaveAndChangeVM_CanExecute()
         {
             bool visitExists;
@@ -204,5 +208,6 @@ namespace VisitorLog.ViewModels
         }
 
         public ICommand SaveAndChangeVMCommand { get; set; }
+        public ICommand ChangeVMCommand { get; set; }
     }
 }

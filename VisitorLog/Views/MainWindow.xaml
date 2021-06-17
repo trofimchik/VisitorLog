@@ -9,8 +9,6 @@
         xmlns:view="clr-namespace:VisitorLog.Views"
         mc:Ignorable="d"
         Title="MainWindow" Width="800" Height="400" WindowState="Maximized" WindowStyle="None">
-    <!--WindowStyle="None"-->
-    <!--WindowState="Maximized"-->
     <Window.Resources>
         <vm:EnterExitSelectionViewModel x:Key="InputOutputVM"/>
         <vm:SecurityOfficerLoginViewModel x:Key="SecurityOfficerLoginVM"/>
@@ -21,9 +19,6 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EntryViewModel}">
             <view:EntryControl/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ExitViewModel}">
-            <view:ExitControl/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:SecurityOfficerLoginViewModel}">
             <view:SecurityOfficerLoginControl/>
@@ -37,10 +32,11 @@
         <DataTemplate DataType="{x:Type vm:AdminPanelViewModel}">
             <view:AdminPanelControl/>
         </DataTemplate>
-        
     </Window.Resources>
     <Window.Style>
-        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
+            <Setter Property="FontSize" Value="26" />
+        </Style>
     </Window.Style>
     <Window.DataContext>
         <vm:CurrentContentVM/>
@@ -60,7 +56,7 @@
         <ContentPresenter Grid.Row="1" Grid.Column="1" Content="{Binding CurrentContent}"/>
         
         <Button Grid.Column="2" Grid.Row="2" Command="{Binding ChangeVMCommand}" 
-                CommandParameter="{Binding Source={StaticResource SecurityOfficerLoginVM}}" Content="ИКОНКА ДОМОЙ">
+                CommandParameter="{Binding Source={StaticResource SecurityOfficerLoginVM}}" Content="Домой">
         </Button>
         <Button Grid.Column="0" Grid.Row="2" Command="{Binding ChangeVMCommand}"
                 CommandParameter="{Binding Source={StaticResource AdminLoginPanelVM}}" Content="Админ"></Button>

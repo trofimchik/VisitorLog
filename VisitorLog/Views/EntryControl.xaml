@@ -7,6 +7,17 @@
              xmlns:vm="clr-namespace:VisitorLog.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetProperty="Opacity"
+              From="0.0" To="1.0" Duration="0:0:1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
     <UserControl.Resources>
         <vm:EnterExitSelectionViewModel x:Key="InputOutputSelectionVM"></vm:EnterExitSelectionViewModel>
 
@@ -20,54 +31,103 @@
             </Border>
         </ControlTemplate>
     </UserControl.Resources>
+    <!--<StackPanel>-->
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="5*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="5*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center">фиксация входа(посетитель? или сопровождающее лицо?)</TextBlock>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Surname, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center">Фиксация входа</TextBlock>
+
+        <StackPanel  Grid.Row="1" VerticalAlignment="Stretch">
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center">Данные посетителя</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Фамилия</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Имя</TextBlock>
+                    <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Отчество</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">Паспортные данные</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">Цель визита</TextBlock>
+
+                    <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Surname, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
                  Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Name, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Name, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
                  Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Patronymic, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBox Grid.Row="6" Grid.Column="0" Text="{Binding Patronymic, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
                  Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
-        <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding DocumentNumber, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding DocumentNumber, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
                  Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
-        <ComboBox Grid.Row="3" Grid.Column="3" ItemsSource="{Binding PurposesOfVisit}" SelectedItem="{Binding SelectedPurpose}"></ComboBox>
-        <ComboBox Grid.Row="4" Grid.Column="3" ItemsSource="{Binding Organizations}" SelectedItem="{Binding SelectedOrganization}"></ComboBox>
-        <ComboBox Grid.Row="5" Grid.Column="3" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock>
-                        <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0} {1} {2}">
-                                <Binding Path="Surname"/>
-                                <Binding Path="Name"/>
-                                <Binding Path="Patronymic"/>
-                            </MultiBinding>
-                        </TextBlock.Text>
-                    </TextBlock>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-        <Button Grid.Row="7" Grid.Column="3" Command="{Binding SaveAndChangeVMCommand}"
-                CommandParameter="{Binding Source={StaticResource ResourceKey=InputOutputSelectionVM}}">
-            сохранить
-        </Button>
-        <Button Grid.Row="7" Grid.Column="1">назад</Button>
+                    <ComboBox Grid.Row="4" Grid.Column="2" ItemsSource="{Binding PurposesOfVisit}" SelectedItem="{Binding SelectedPurpose}"></ComboBox>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center">Данные сопровождающего</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Организация</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">Сопровождающее лицо</TextBlock>
+
+                    <ComboBox Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Organizations}" SelectedItem="{Binding SelectedOrganization}"></ComboBox>
+                    <ComboBox Grid.Row="2" Grid.Column="2" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                                            <Binding Path="Surname"/>
+                                            <Binding Path="Name"/>
+                                            <Binding Path="Patronymic"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </Grid>
+            </Border>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Command="{Binding ChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource ResourceKey=InputOutputSelectionVM}}" Content="Назад"/>
+            <Button Grid.Column="2" Command="{Binding SaveAndChangeVMCommand}" 
+                CommandParameter="{Binding Source={StaticResource ResourceKey=InputOutputSelectionVM}}" Content="Сохранить"/>
+
+        </Grid>
+
     </Grid>
 </UserControl>

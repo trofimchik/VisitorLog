@@ -16,9 +16,6 @@
     <Compile Update="Views\EntryControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ExitControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\EnterExitSelectionControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,9 +34,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EntryControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\ExitControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EnterExitSelectionControl.xaml">

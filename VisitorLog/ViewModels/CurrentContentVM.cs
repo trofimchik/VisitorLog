@@ -34,7 +34,6 @@ namespace VisitorLog.ViewModels
             }
         }
 
-
         public ICommand ChangeVMCommand { get; private set; }
 
         private void ChangeVM(BaseViewModel vm)

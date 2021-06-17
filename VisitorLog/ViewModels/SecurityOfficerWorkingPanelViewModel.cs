@@ -13,13 +13,18 @@ namespace VisitorLog.ViewModels
 {
     class SecurityOfficerWorkingPanelViewModel : BaseViewModel
     {
+        private RaiseContentChangerCommand changer = new RaiseContentChangerCommand();
         public SecurityOfficerWorkingPanelViewModel()
         {
             ExitCommand = new RelayCommand(SetVisitorExit);
+            ChangeVMCommand = new RelayCommand(changer.ExecuteEventRaising);
             BeginningOfPeriodRemaining = DateTime.Now.Date;
             EndingOfPeriodRemaining = DateTime.Now.Date;
+            DateEnd = DateTime.Now.Date;
             SetVisitsList();
         }
+
+
         private ObservableCollection<CurrentVisitor> currentVisits;
         public ObservableCollection<CurrentVisitor> CurrentVisits
         {
@@ -125,6 +130,17 @@ namespace VisitorLog.ViewModels
                 OnPropertyChanged();
             }
         }
+        //ToDo: Исправить ошибку с фильтрацией по дате...
+        private DateTime dateEnd;
+        public DateTime DateEnd
+        {
+            get { return dateEnd; }
+            set 
+            { 
+                dateEnd = value;
+                OnPropertyChanged();
+            }
+        }
         private void SetBetweenTwoDatesRemaining()
         {
             using (VisitorLogContext db = new VisitorLogContext())
@@ -134,8 +150,8 @@ namespace VisitorLog.ViewModels
                             join emp in db.Employees on vis.IdEmployees equals emp.Id
                             join org in db.Organizations on emp.IdOrganization equals org.Id
                             join purp in db.PurposesOfVisits on vis.IdPurpose equals purp.Id
-                            where vis.DatetimeOfEntry >= BeginningOfPeriodRemaining
-                            && vis.DatetimeOfEntry <= EndingOfPeriodRemaining
+                            where vis.DatetimeOfEntry >= BeginningOfPeriodRemaining.Date
+                            && vis.DatetimeOfEntry <= EndingOfPeriodRemaining.Date.AddDays(1).AddSeconds(-1)
                             select new RemainingVisitor
                             {
                                 Surname = vis.Surname,
@@ -153,19 +169,25 @@ namespace VisitorLog.ViewModels
         }
         private void SetVisitorExit(object obj)
         {
-            var row = obj as CurrentVisitor;
-            using (VisitorLogContext db = new VisitorLogContext())
+
+            if (MessageBox.Show("Вы уверены?", "Требуется подтверждение", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
-                db.Visits.Where(visit => visit.Name == row.Name
-                && visit.Surname == row.Surname
-                && visit.Patronymic == row.Patronymic
-                && visit.DocumentNumber == row.DocumentNumber
-                && visit.DatetimeOfEntry == row.DateTimeOfEntry && visit.DatetimeOfExit == null).First().DatetimeOfExit = DateTime.Now;
-                db.SaveChanges();
+                var row = obj as CurrentVisitor;
+                using (VisitorLogContext db = new VisitorLogContext())
+                {
+                    db.Visits.Where(visit => visit.Name == row.Name
+                    && visit.Surname == row.Surname
+                    && visit.Patronymic == row.Patronymic
+                    && visit.DocumentNumber == row.DocumentNumber
+                    && visit.DatetimeOfEntry == row.DateTimeOfEntry && visit.DatetimeOfExit == null).First().DatetimeOfExit = DateTime.Now;
+                    db.SaveChanges();
+                }
+                SetVisitsList();
+                //MessageBox.Show(row.Name);
             }
-            SetVisitsList();
-            //MessageBox.Show(row.Name);
         }
+       
+        public ICommand ChangeVMCommand { get; private set; }
         public ICommand ExitCommand { get; set; }
     }
 }
