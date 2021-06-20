@@ -24,6 +24,7 @@
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\trofk\.nuget\packages\newtonsoft.json\10.0.1</PkgNewtonsoft_Json>
     <PkgSyncfusion_Shared_WPF Condition=" '$(PkgSyncfusion_Shared_WPF)' == '' ">C:\Users\trofk\.nuget\packages\syncfusion.shared.wpf\19.1.0.66</PkgSyncfusion_Shared_WPF>
     <PkgSyncfusion_SfGrid_WPF Condition=" '$(PkgSyncfusion_SfGrid_WPF)' == '' ">C:\Users\trofk\.nuget\packages\syncfusion.sfgrid.wpf\19.1.0.66</PkgSyncfusion_SfGrid_WPF>
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\trofk\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.31</PkgMicrosoft_Xaml_Behaviors_Wpf>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\trofk\.nuget\packages\microsoft.entityframeworkcore.tools\5.0.5</PkgMicrosoft_EntityFrameworkCore_Tools>
   </PropertyGroup>
 </Project>

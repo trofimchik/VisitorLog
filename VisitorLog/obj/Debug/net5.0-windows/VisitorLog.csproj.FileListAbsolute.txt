@@ -72,7 +72,6 @@ C:\repos\VisitorLog\VisitorLog\bin\Debug\net5.0-windows\runtimes\win-x86\native\
 C:\repos\VisitorLog\VisitorLog\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\repos\VisitorLog\VisitorLog\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\repos\VisitorLog\VisitorLog\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\VisitorLog.csprojAssemblyReference.cache
 C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\Views\MainWindow.baml
 C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\VisitorLog.g.resources
 C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\VisitorLog.GeneratedMSBuildEditorConfig.editorconfig
@@ -81,3 +80,7 @@ C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\VisitorLog.AssemblyInfo.
 C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\VisitorLog.csproj.CoreCompileInputs.cache
 C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\VisitorLog.csproj.CopyComplete
 C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\VisitorLog.genruntimeconfig.cache
+C:\repos\VisitorLog\VisitorLog\bin\Debug\net5.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\VisitorLog.csprojAssemblyReference.cache
+C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\Views\AddNewSOControl.g.cs
+C:\repos\VisitorLog\VisitorLog\obj\Debug\net5.0-windows\Views\AddNewSOControl.baml

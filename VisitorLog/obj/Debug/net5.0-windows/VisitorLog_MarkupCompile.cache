@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\repos\VisitorLog\VisitorLog\App.xaml
-71520835039
+8-672205320
 
-32-340203897
-2218896008
-Views\AdminLoginPanelControl.xaml;Views\AdminPanelControl.xaml;Views\EnterExitSelectionControl.xaml;Views\EntryControl.xaml;Views\MainWindow.xaml;Views\SecurityOfficerLoginControl.xaml;Views\SecurityOfficerWorkingPanelControl.xaml;
+33-457424571
+222-1881989636
+Views\AddNewSOControl.xaml;Views\AdminLoginPanelControl.xaml;Views\AdminPanelControl.xaml;Views\EnterExitSelectionControl.xaml;Views\EntryControl.xaml;Views\MainWindow.xaml;Views\SecurityOfficerLoginControl.xaml;Views\SecurityOfficerWorkingPanelControl.xaml;
 
 False
 

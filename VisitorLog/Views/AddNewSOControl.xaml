@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="VisitorLog.Views.AddNewSOControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VisitorLog.Views" 
+             xmlns:vm="clr-namespace:VisitorLog.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <vm:AdminPanelViewModel x:Key="AdminPanelVM"></vm:AdminPanelViewModel>
+
+        <ControlTemplate x:Key="errorTemplate">
+            <Border BorderBrush="Red" BorderThickness="2">
+                <Grid>
+                    <AdornedElementPlaceholder/>
+                    <TextBlock Text="{Binding [0].ErrorContent}" Foreground="OrangeRed"
+                               VerticalAlignment="Center" HorizontalAlignment="Right" Margin="4, 0, 0, 0"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Center">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Добавление сотрудника</TextBlock>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Логин</TextBlock>
+            <TextBox Text="{Binding Login, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+                 Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
+
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Пароль</TextBlock>
+            <TextBox Text="{Binding Password, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" 
+                 Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplate}"></TextBox>
+
+        </StackPanel>
+
+        <Button Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Command="{Binding ChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource ResourceKey=AdminPanelVM}}" Content="Отмена"/>
+        <Button Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" Command="{Binding SaveAndChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource ResourceKey=AdminPanelVM}}" Content="Сохранить"/>
+        <!--<Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+        </Grid>-->
+    </Grid>
+
+    <!--</Grid>-->
+</UserControl>

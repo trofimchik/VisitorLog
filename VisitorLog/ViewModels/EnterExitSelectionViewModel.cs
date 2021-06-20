@@ -9,7 +9,6 @@ namespace VisitorLog.ViewModels
 {
     class EnterExitSelectionViewModel : BaseViewModel
     {
-        //ContentChanger changer;
         public EnterExitSelectionViewModel()
         {
             RaiseContentChangerCommand changer = new RaiseContentChangerCommand();
@@ -17,16 +16,5 @@ namespace VisitorLog.ViewModels
         }
         
         public ICommand ChangeVMCommand { get; private set; }
-
-
-        
-        //public void ChangeControl(object parameter)
-        //{
-        //    MessageBox.Show("метод команды");
-
-        //    ContentChanger.OnContentChanged(parameter as BaseViewModel);
-
-        //    //ContentChanger.OnContentChanged(new EntryViewModel());
-        //}
     }
 }

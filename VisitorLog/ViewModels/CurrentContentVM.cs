@@ -12,7 +12,8 @@ namespace VisitorLog.ViewModels
 {
     class CurrentContentVM : BaseViewModel
     {
-
+        //TODO: Исправить костыль isValid, заменить на событие?
+        public static bool isValid = true;
         public CurrentContentVM()
         {
             CurrentContent = new SecurityOfficerLoginViewModel();
@@ -20,7 +21,7 @@ namespace VisitorLog.ViewModels
             ContentChanger.ContentChanged += ChangeVM;
 
             RaiseContentChangerCommand changer = new RaiseContentChangerCommand();
-            ChangeVMCommand = new RelayCommand(changer.ExecuteEventRaising);
+            ChangeVMCommand = new RelayCommand(changer.ExecuteEventRaising, ChangeVM_CanExecute);
         }
 
         private BaseViewModel сurrentContent;
@@ -40,12 +41,9 @@ namespace VisitorLog.ViewModels
         {
             CurrentContent = vm;
         }
-
-        //public void ChangeControl(object parameter)
-        //{
-        //    //BaseViewModel vm = parameter as BaseViewModel;
-        //    CurrentContent = parameter as BaseViewModel;
-        //    //changer.OnContentChanged(new EnterExitSelectionViewModel(changer));
-        //}
+        private bool ChangeVM_CanExecute()
+        {
+            return isValid;
+        }
     }
 }

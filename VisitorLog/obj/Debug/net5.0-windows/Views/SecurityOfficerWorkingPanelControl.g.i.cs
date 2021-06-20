@@ -79,7 +79,7 @@ namespace VisitorLog.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VisitorLog;V1.0.0.0;component/views/securityofficerworkingpanelcontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VisitorLog;component/views/securityofficerworkingpanelcontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\SecurityOfficerWorkingPanelControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

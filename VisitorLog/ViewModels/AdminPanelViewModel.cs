@@ -7,18 +7,22 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using VisitorLog.ViewModels.Commands;
+using Syncfusion.UI.Xaml.Grid;
 
 namespace VisitorLog.ViewModels
 {
     class AdminPanelViewModel : BaseViewModel
     {
         private RaiseContentChangerCommand changer = new RaiseContentChangerCommand();
+        
         public AdminPanelViewModel()
         {
-            MainCloseButtonCommand = new RelayCommand(PerformMainCloseButtonCommand);
-            ChangeVMCommand = new RelayCommand(changer.ExecuteEventRaising);
-            ChangeVMAndSaveDataCommand = new RelayCommand(ChangeVMAndSaveData);
+            CollectionChanged += UpdateData;
+            MainCloseButtonCommand = new RelayCommand(PerformMainCloseButtonCommand, ChangeVM_CanExecute);
+            ChangeVMCommand = new RelayCommand(changer.ExecuteEventRaising, ChangeVM_CanExecute);
             DeleteCommand = new RelayCommand(DeleteOfficer);
+            SaveChangesCommand = new RelayCommand(SaveData);
+
             using (VisitorLogContext db = new VisitorLogContext())
             {
                 SecurityOfficers = new ObservableCollection<SecurityOfficer>(db.SecurityOfficers);
@@ -27,30 +31,52 @@ namespace VisitorLog.ViewModels
 
         public ObservableCollection<SecurityOfficer> SecurityOfficers { get; set; }
         public ICommand ChangeVMCommand { get; private set; }
-        public ICommand ChangeVMAndSaveDataCommand { get; private set; }
+        public ICommand SaveChangesCommand { get; set; }
         public ICommand MainCloseButtonCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
-        private void ChangeVMAndSaveData(object obj)
+
+
+        private void SaveData(object obj)
         {
             using (VisitorLogContext db = new VisitorLogContext())
             {
                 foreach (SecurityOfficer officer in SecurityOfficers)
                 {
-                    if (db.SecurityOfficers.Any(off => off.Id == officer.Id))
+                    if (SecurityOfficers.Where(off => off.Login == officer.Login).ToList().Count > 1)
                     {
-                        var off = db.SecurityOfficers.Where(off => off.Id == officer.Id).First();
-                        off.Login = officer.Login;
-                        off.Password = officer.Password;
-                        db.SecurityOfficers.Update(off);
+                        MessageBox.Show("Повторяющиеся логины " + officer.Login);
+                        CurrentContentVM.isValid = false;
+                        break;
                     }
                     else
                     {
-                        db.SecurityOfficers.Add(officer);
+                        CurrentContentVM.isValid = true;
+                        if (db.SecurityOfficers.Any(off => off.Id == officer.Id))
+                        {
+                            if (officer.Login != null || officer.Password != null)
+                            {
+                                var off = db.SecurityOfficers.Where(off => off.Id == officer.Id).First();
+                                off.Login = officer.Login;
+                                off.Password = officer.Password;
+                                db.SecurityOfficers.Update(off);
+                            }
+                        }
+                        else
+                        {
+                            if (officer.Login != null || officer.Password != null)
+                                db.SecurityOfficers.Add(officer);
+                        }
                     }
                 }
+
                 db.SaveChanges();
             }
-            changer.ExecuteEventRaising(obj);
+        }
+
+        //TODO: Исправить костыль isValid, заменить на событие?
+        private bool ChangeVM_CanExecute()
+        {
+            return CurrentContentVM.isValid;
         }
         private void PerformMainCloseButtonCommand(object Parameter)
         {
@@ -60,21 +86,36 @@ namespace VisitorLog.ViewModels
                 objWindow.Close();
             }
         }
-        //ToDo: Реализовать функцию добавления нового сотрудника. реализовать проверку валидации.
         private void DeleteOfficer(object obj)
         {
-            if(MessageBox.Show("Вы уверены?","Требуется подтверждение", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            SecurityOfficer officer = obj as SecurityOfficer;
+            if (officer.Id > 0)
+                if (SecurityOfficers.Any(off => off.Id == officer.Id))
+                    if (MessageBox.Show("Вы уверены?", "Требуется подтверждение", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                    {
+                        using (VisitorLogContext db = new VisitorLogContext())
+                        {
+                            officer = db.SecurityOfficers.First(off => off.Id == officer.Id);
+                            db.SecurityOfficers.Remove(officer);
+                            db.SaveChanges();
+                            SecurityOfficers = new ObservableCollection<SecurityOfficer>(db.SecurityOfficers);
+                        }
+                        OnPropertyChanged("SecurityOfficers");
+                    }
+        }
+        private void UpdateData()
+        {
+            using (VisitorLogContext db = new VisitorLogContext())
             {
-                SecurityOfficer officer = obj as SecurityOfficer;
-                using (VisitorLogContext db = new VisitorLogContext())
-                {
-                    officer = db.SecurityOfficers.First(off => off.Id == officer.Id);
-                    db.SecurityOfficers.Remove(officer);
-                    db.SaveChanges();
-                    SecurityOfficers = new ObservableCollection<SecurityOfficer>(db.SecurityOfficers);
-                }
-                OnPropertyChanged("SecurityOfficers");
+                SecurityOfficers = new ObservableCollection<SecurityOfficer>(db.SecurityOfficers);
             }
+        }
+
+        public static event ExecuteChangeCollection CollectionChanged;
+        public delegate void ExecuteChangeCollection();
+        public static void OnContentChanged()
+        {
+            CollectionChanged?.Invoke();
         }
     }
 }

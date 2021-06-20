@@ -9,9 +9,15 @@ namespace Models.VisitorLog
     public partial class SecurityOfficer
     {
         public int Id { get; set; }
-        [Range(4, 100, ErrorMessage = "Должно быть как минимум 4 символа")]
+
+        //[Required(ErrorMessage = "Поле не должно быть пустым.")]
+
+        [Required(ErrorMessage = "Поле не должно быть пустым.")]
+        [StringLength(100, MinimumLength = 4, ErrorMessage = "Не меньше 4 и не больше 100 символов.")]
         public string Login { get; set; }
-        [Range(4, 100, ErrorMessage = "Должно быть как минимум 4 символа")]
+
+        [Required(ErrorMessage = "Поле не должно быть пустым.")]
+        [StringLength(100, MinimumLength = 4, ErrorMessage = "Не меньше 4 и не больше 100 символов.")]
         public string Password { get; set; }
 
         //public SecurityOfficer(int id, string login, string password)

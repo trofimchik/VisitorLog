@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AddNewSOControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AdminLoginPanelControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +30,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AddNewSOControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AdminLoginPanelControl.xaml">
       <SubType>Designer</SubType>
     </Page>

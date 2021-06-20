@@ -31,7 +31,6 @@
             </Border>
         </ControlTemplate>
     </UserControl.Resources>
-    <!--<StackPanel>-->
 
     <Grid>
         <Grid.ColumnDefinitions>

@@ -4,8 +4,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:VisitorLog.ViewModels"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:VisitorLog.Views"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Triggers>
@@ -21,6 +21,7 @@
     </UserControl.Triggers>
     <UserControl.Resources>
         <vm:SecurityOfficerLoginViewModel x:Key="SecurityOfficerLoginVM"/>
+        <vm:AddNewSOViewModel x:Key="AddNewSOVM"/>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -35,14 +36,30 @@
 
         <Syncfusion:SfDataGrid Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0" x:Name="sfGrid" ItemsSource="{Binding SecurityOfficers}" 
                                ColumnSizer="Auto" AllowEditing="True" AutoGenerateColumns="False" 
-                               AddNewRowPosition="Top" AddNewRowText="Добавить нового сотрудника"
-                               GridValidationMode="InView">
+                               GridValidationMode="InEdit">
+            <behaviors:Interaction.Triggers>
+                <!--<behaviors:EventTrigger EventName="CurrentCellBeginEdit">
+                    <behaviors:InvokeCommandAction Command="{Binding Path=CantExecuteCommand}"/>
+                </behaviors:EventTrigger>
+                <behaviors:EventTrigger EventName="CurrentCellEndEdit">
+                    <behaviors:InvokeCommandAction Command="{Binding Path=CanExecuteCommand}"/>
+                </behaviors:EventTrigger>-->
+                <behaviors:EventTrigger EventName="CurrentCellEndEdit">
+                    <behaviors:InvokeCommandAction Command="{Binding Path=SaveChangesCommand}"/>
+                </behaviors:EventTrigger>
+                <!--<behaviors:EventTrigger EventName="AddNewRowInitiating">
+                    <behaviors:InvokeCommandAction Command="{Binding Path=AddNewRowInitiatingCommand}"/>
+                </behaviors:EventTrigger>-->
+                <!--<behaviors:EventTrigger EventName="RowValidating">
+                    <behaviors:InvokeCommandAction Command="{Binding Path=RowValidatingCommand}" CommandParameter="{Binding}"/>
+                </behaviors:EventTrigger>-->
+            </behaviors:Interaction.Triggers>
             <Syncfusion:SfDataGrid.Columns>
                 <Syncfusion:GridTemplateColumn Width="52" MappingName="Удалить" AllowFiltering="False" >
                     <Syncfusion:GridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button  Content="delete" Syncfusion:FocusManagerHelper.FocusedElement="True" 
-Command="{Binding Path=DataContext.DeleteCommand,ElementName=sfGrid}" CommandParameter="{Binding}"/>
+                            <Button Content="delete" Syncfusion:FocusManagerHelper.FocusedElement="True"
+                                    Command="{Binding Path=DataContext.DeleteCommand,ElementName=sfGrid}" CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </Syncfusion:GridTemplateColumn.CellTemplate>
                 </Syncfusion:GridTemplateColumn>
@@ -50,11 +67,12 @@ Command="{Binding Path=DataContext.DeleteCommand,ElementName=sfGrid}" CommandPar
                 <Syncfusion:GridTextColumn HeaderText="Пароль" MappingName="Password" />
             </Syncfusion:SfDataGrid.Columns>
         </Syncfusion:SfDataGrid>
+        <!--<Button Grid.Row="1" Grid.Column="0" Command="{Binding ChangeVMCommand}"
+                CommandParameter="{Binding Source={StaticResource ResourceKey=SecurityOfficerLoginVM}}" Content="На главный экран без сохранения"></Button>-->
         <Button Grid.Row="1" Grid.Column="0" Command="{Binding ChangeVMCommand}"
-                CommandParameter="{Binding Source={StaticResource ResourceKey=SecurityOfficerLoginVM}}" Content="На главный экран без сохранения"></Button>
-        <Button Grid.Row="1" Grid.Column="1" Content="Добавить сотрудника"></Button>
-        <Button Grid.Row="1" Grid.Column="1" Command="{Binding ChangeVMAndSaveDataCommand}"
-                CommandParameter="{Binding Source={StaticResource ResourceKey=SecurityOfficerLoginVM}}" Content="Сохранить изменения"></Button>
-        <Button Grid.Row="1" Grid.Column="2" Command="{Binding MainCloseButtonCommand}" CommandParameter="{Binding ElementName=mainWindow}" Content="Выйти из программы без сохранения"></Button>
+                CommandParameter="{Binding Source={StaticResource ResourceKey=AddNewSOVM}}" Content="Добавить нового сотрудника"></Button>
+        <!--<Button Grid.Row="1" Grid.Column="0" Command="{Binding ChangeVMAndSaveDataCommand}"
+                CommandParameter="{Binding Source={StaticResource ResourceKey=SecurityOfficerLoginVM}}" IsEnabled="{Binding}" Content="Сохранить изменения"></Button>-->
+        <Button Grid.Row="1" Grid.Column="2" Command="{Binding MainCloseButtonCommand}" CommandParameter="{Binding ElementName=mainWindow}" Content="Выйти из программы"></Button>
     </Grid>
 </UserControl>

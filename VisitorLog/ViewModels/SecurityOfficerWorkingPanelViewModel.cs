@@ -130,7 +130,7 @@ namespace VisitorLog.ViewModels
                 OnPropertyChanged();
             }
         }
-        //ToDo: Исправить ошибку с фильтрацией по дате...
+
         private DateTime dateEnd;
         public DateTime DateEnd
         {
